@@ -18,35 +18,35 @@ class MainTestCase(unittest.TestCase):
 
     def test000(self):
         res = self.net.go([0, 0, 0])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])
 
     def test001(self):
         res = self.net.go([0, 0, 1])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
     def test010(self):
         res = self.net.go([0, 1, 0])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])
 
     def test011(self):
         res = self.net.go([0, 1, 1])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
     def test100(self):
         res = self.net.go([1, 0, 0])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])
 
     def test101(self):
         res = self.net.go([1, 0, 1])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
     def test110(self):
         res = self.net.go([1, 1, 0])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])
 
     def test111(self):
         res = self.net.go([1, 1, 1])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])
 
 
 """class AndTestCase(unittest.TestCase):
@@ -83,25 +83,25 @@ class OrTestCase(unittest.TestCase):
 
     def test00(self):
         res = self.net.go([0, 0])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])
 
     def test01(self):
         res = self.net.go([0, 1])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
     def test10(self):
         res = self.net.go([1, 0])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
     def test11(self):
         res = self.net.go([1, 1])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
 
 class XorTestCase(unittest.TestCase):
     def setUp(self):
         weigths1 = [
-            [-9.5, 5.5, 4.5, ],
+            [-9.5, 5.5, 4.5],
             [-8.5, 4.5, -0.5],
         ]
         weights2 = [
@@ -113,16 +113,16 @@ class XorTestCase(unittest.TestCase):
 
     def test00(self):
         res = self.net.go([0, 0])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])
 
     def test01(self):
         res = self.net.go([0, 1])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
     def test10(self):
         res = self.net.go([1, 0])
-        self.assertEqual(res, 1)
+        self.assertEqual(res, [1])
 
     def test11(self):
         res = self.net.go([1, 1])
-        self.assertEqual(res, 0)
+        self.assertEqual(res, [0])

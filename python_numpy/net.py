@@ -20,11 +20,11 @@ class Net:
     def go(self, y):
         y = np.array(y)
         for layer_index, w in enumerate(self.wlayers):
-            act = self.nlayers[layer_index]
+            neuron = self.nlayers[layer_index]
             if self.use_bias:
                 y = np.concatenate([y, np.array([1])])
 
             y = np.dot(w, y)
-            y = np.array([act[i](x) for i, x in enumerate(y)])
+            y = np.array([neuron[i](x) for i, x in enumerate(y)])
 
-        return y[0]
+        return y
